@@ -24,6 +24,38 @@
         return outputkodepos[inputint];
     }
 
+    public enum pintu {Terbuka , Terukunci};
+    public enum Trigger { bukaPintu,kunciPintu}
+
+
+    class DoorMachine
+    {
+        public pintu currentstate = pintu.Terukunci;
+        public class Transition
+        {
+            public pintu langkahAwal;
+            public pintu langkahAkhir;
+            public Trigger trigger;
+
+            public Transition(pintu langkahAwal,pintu langkahAkhir, Trigger trigger)
+            {
+                this.langkahAwal = langkahAwal;
+                this.langkahAwal = langkahAwal;
+                this.langkahAwal = langkahAwal;
+
+            }
+
+        }
+        Transition[] transisi =
+        {
+            new Transition(pintu.Terukunci, pintu.Terbuka, Trigger.bukaPintu),
+            new Transition(pintu.Terbuka,pintu.Terukunci , Trigger.bukaPintu)
+
+        };
+
+       
+    }
+
     public static void Main(string[] args)
     {
         kelurahan kelurahan = kelurahan.Batununggal;
@@ -72,6 +104,9 @@
 
 
     }
+
+
+
 
 
 
